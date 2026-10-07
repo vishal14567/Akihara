@@ -1,0 +1,430 @@
+@model Akihara.Models.Product
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<!-- Categories Sub-header Bar -->
+<div class="store-subnav-bar">
+    <div class="store-subnav-container">
+        <a href="#" class="subnav-category-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+            Categories
+        </a>
+        <a href="#" class="subnav-link">New Arrivals</a>
+        <a href="#" class="subnav-link">Pre-orders</a>
+        <a href="#" class="subnav-link active">Figures</a>
+        <a href="#" class="subnav-link">Clothing</a>
+        <a href="#" class="subnav-link">Accessories</a>
+        <a href="#" class="subnav-link">Manga</a>
+        <a href="#" class="subnav-link">Home &amp; Decor</a>
+        <a href="#" class="subnav-link">Deals</a>
+    </div>
+</div>
+
+<div class="pdp-wrapper">
+    <!-- Breadcrumb -->
+    <nav class="pdp-breadcrumb" aria-label="breadcrumb">
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        @foreach (var crumb in Model.CategoryPath.Skip(1))
+        {
+            <span class="crumb-separator">&gt;</span>
+            @if (crumb == Model.CategoryPath.Last())
+            {
+                <span class="crumb-current">@crumb</span>
+            }
+            else
+            {
+                <a href="#">@crumb</a>
+            }
+        }
+    </nav>
+
+    <!-- Top Main Product Hero Box (Gallery + Main Info) -->
+    <div class="pdp-main-card">
+        <div class="pdp-grid">
+            <!-- Left Side: Thumbnails + Main Gallery Image -->
+            <div class="pdp-gallery-column">
+                <div class="pdp-gallery-layout">
+                    <!-- Vertical Thumbnails Stack -->
+                    <div class="pdp-thumbnails-stack scroll-container">
+                        @for (int i = 0; i < Model.Images.Count; i++)
+                        {
+                            var imgUrl = Model.Images[i];
+                            <div class="pdp-thumb-box @(i == 0 ? "active" : "")" data-src="@Url.Content(imgUrl)">
+                                <img src="@Url.Content(imgUrl)" alt="Thumbnail @(i+1)" />
+                            </div>
+                        }
+                        <button class="pdp-thumb-arrow-down" id="thumbScrollDown" title="Scroll down">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Main Large Product Viewport -->
+                    <div class="pdp-main-image-wrapper">
+                        <!-- Wishlist Toggle -->
+                        <button class="pdp-wishlist-toggle" id="pdpWishlistBtn" title="Add to Wishlist">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </button>
+
+                        <img id="pdpMainImage" src="@Url.Content(Model.Images.FirstOrDefault() ?? "~/img/giyu_tomioka_main.jpg")" alt="@Model.Title" />
+
+                        <!-- View in 3D Overlay Button -->
+                        <button class="pdp-3d-view-btn" id="open3dModalBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                            </svg>
+                            View in 3D
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Details & Actions -->
+            <div class="pdp-details-column">
+                <!-- Badge -->
+                @if (!string.IsNullOrEmpty(Model.Badge))
+                {
+                    <div class="pdp-badge-pill">@Model.Badge</div>
+                }
+
+                <!-- Product Title -->
+                <h1 class="pdp-title">@Model.Title</h1>
+
+                <!-- Brand line & Rating / Actions row -->
+                <div class="pdp-meta-row">
+                    <div class="pdp-brand-info">
+                        Brand: <a href="#" class="pdp-brand-link">@Model.Brand</a>
+                    </div>
+
+                    <div class="pdp-rating-pill-container">
+                        <span class="pdp-star-badge">
+                            @Model.Rating.ToString("0.0") ★
+                        </span>
+                        <span class="pdp-rating-text">@Model.RatingCount.ToString("N0") Ratings &amp; @Model.ReviewCount Reviews</span>
+                    </div>
+
+                    <div class="pdp-meta-actions">
+                        <button class="pdp-meta-action-btn" id="shareProductBtn" title="Share">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                            </svg>
+                            Share
+                        </button>
+                        <button class="pdp-meta-action-btn" id="compareProductBtn" title="Compare">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                            </svg>
+                            Compare
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Price Block -->
+                <div class="pdp-price-card">
+                    <span class="pdp-current-price">@Model.Currency@Model.Price.ToString("N0")</span>
+                    @if (Model.DiscountPercentage > 0)
+                    {
+                        <span class="pdp-discount-pill">@Model.DiscountPercentage% OFF</span>
+                        <span class="pdp-original-price">M.R.P.: @Model.Currency@Model.OriginalPrice.ToString("N0")</span>
+                    }
+                    <span class="pdp-tax-note">(Inclusive of all taxes)</span>
+                </div>
+
+                <!-- Available Offers Card -->
+                <div class="pdp-offers-box">
+                    <h4 class="pdp-offers-title">Available Offers</h4>
+                    <ul class="pdp-offers-list">
+                        @foreach (var offer in Model.Offers)
+                        {
+                            <li class="pdp-offer-item">
+                                <svg class="pdp-tag-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#00875A">
+                                    <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
+                                </svg>
+                                <div class="pdp-offer-text">
+                                    <strong>@offer.Title</strong> @offer.Description
+                                </div>
+                                <a href="@offer.TermsUrl" class="pdp-tnc-link">T&amp;C</a>
+                            </li>
+                        }
+                    </ul>
+                    <a href="#" class="pdp-more-offers-link" id="toggleMoreOffers">View 5 more offers &gt;</a>
+                </div>
+
+                <!-- Delivery & Pincode Checker Card -->
+                <div class="pdp-delivery-box">
+                    <div class="pdp-pincode-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span>Deliver to <strong id="currentCityText">@Model.DeliveryLocation.City - @Model.DeliveryLocation.Pincode</strong></span>
+                        <button class="pdp-change-btn" id="changePincodeBtn">Change</button>
+                    </div>
+
+                    <!-- Inline Change Pincode Form (Hidden by default) -->
+                    <div class="pdp-pincode-form hidden" id="pincodeForm">
+                        <input type="text" id="pincodeInput" placeholder="Enter 6-digit Pincode" maxlength="6" value="@Model.DeliveryLocation.Pincode" />
+                        <button id="submitPincodeBtn">Check</button>
+                    </div>
+
+                    <div class="pdp-delivery-detail">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8" />
+                        </svg>
+                        <div>
+                            <span>Delivery by <strong>@Model.DeliveryLocation.DeliveryDate</strong> | Free <del>₹@Model.DeliveryLocation.OriginalFee</del></span>
+                            <div class="pdp-cutoff-time">
+                                If ordered within <span id="countdownTimer" class="pdp-timer-text">@Model.DeliveryLocation.CutoffTimeLeft</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Primary CTA Action Buttons -->
+                <div class="pdp-action-buttons">
+                    <button class="pdp-btn-cart" id="addToCartBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        ADD TO CART
+                    </button>
+                    <button class="pdp-btn-buynow" id="buyNowBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+                        </svg>
+                        BUY NOW
+                    </button>
+                </div>
+
+                <!-- Trust Badges Bar -->
+                <div class="pdp-trust-bar">
+                    <div class="pdp-trust-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.5" />
+                        </svg>
+                        <span>7 Days Replacement</span>
+                    </div>
+                    <div class="pdp-trust-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span>Cash on Delivery available</span>
+                    </div>
+                    <div class="pdp-trust-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#00875A" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                        </svg>
+                        <span>Plus (F-Assured)</span>
+                    </div>
+                    <div class="pdp-trust-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                        <span>Secure Packaging</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Section: Highlights (Left), Tabs (Center), Rating Breakdown (Right) -->
+    <div class="pdp-bottom-row">
+        <!-- Column 1: Highlights Card -->
+        <div class="pdp-highlights-card">
+            <h3 class="pdp-section-subtitle">Highlights</h3>
+            <ul class="pdp-highlights-list">
+                @foreach (var hl in Model.Highlights)
+                {
+                    <li>@hl</li>
+                }
+            </ul>
+            <a href="#pdpTabsCard" class="pdp-view-more-link">View more</a>
+        </div>
+
+        <!-- Column 2: Interactive Tabs Card (Description, Specifications, Reviews, Q&A) -->
+        <div class="pdp-tabs-card" id="pdpTabsCard">
+            <div class="pdp-tab-headers">
+                <button class="pdp-tab-btn active" data-tab="tab-description">Description</button>
+                <button class="pdp-tab-btn" data-tab="tab-specifications">Specifications</button>
+                <button class="pdp-tab-btn" data-tab="tab-reviews">Reviews (@Model.ReviewCount)</button>
+                <button class="pdp-tab-btn" data-tab="tab-qna">Q&amp;A</button>
+            </div>
+
+            <div class="pdp-tab-body">
+                <!-- Description Tab Pane -->
+                <div class="pdp-tab-pane active" id="tab-description">
+                    <p>From the popular anime <strong>Demon Slayer: Kimetsu no Yaiba</strong> comes a 1/8 scale figure of the Water Hashira, <strong>Giyu Tomioka</strong>.</p>
+                    <p>The figure captures his calm yet powerful demeanor with incredible detail. Features dynamic translucent water effect swirls and meticulously painted split pattern haori coat.</p>
+                    <p>A must-have for every Demon Slayer fan!</p>
+                    <a href="#" class="pdp-read-more-link" id="readMoreDescBtn">Read More</a>
+                </div>
+
+                <!-- Specifications Tab Pane -->
+                <div class="pdp-tab-pane" id="tab-specifications">
+                    <table class="pdp-specs-table">
+                        <tbody>
+                            @foreach (var spec in Model.Specifications)
+                            {
+                                <tr>
+                                    <th>@spec.Key</th>
+                                    <td>@spec.Value</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Reviews Tab Pane -->
+                <div class="pdp-tab-pane" id="tab-reviews">
+                    <div class="pdp-reviews-list">
+                        @if (Model.Reviews.Any())
+                        {
+                            @foreach (var rev in Model.Reviews)
+                            {
+                                <div class="pdp-review-item">
+                                    <div class="pdp-review-header">
+                                        <span class="pdp-star-pill">@rev.Rating ★</span>
+                                        <strong>@rev.UserName</strong>
+                                        @if (rev.Verified)
+                                        {
+                                            <span class="pdp-verified-badge">✔ Verified Purchase</span>
+                                        }
+                                        <span class="pdp-review-date">@rev.Date</span>
+                                    </div>
+                                    <p class="pdp-review-comment">@rev.Comment</p>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <p>No customer reviews yet. Be the first to review this product!</p>
+                        }
+                    </div>
+                </div>
+
+                <!-- Q&A Tab Pane -->
+                <div class="pdp-tab-pane" id="tab-qna">
+                    <div class="pdp-qna-list">
+                        @if (Model.Qna.Any())
+                        {
+                            @foreach (var q in Model.Qna)
+                            {
+                                <div class="pdp-qna-item">
+                                    <div class="pdp-qna-question">Q: @q.Question</div>
+                                    <div class="pdp-qna-answer">A: @q.Answer</div>
+                                    <div class="pdp-qna-meta">Asked by @q.AskedBy on @q.Date</div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <p>Have questions about this item? Ask below!</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 3: Ratings Summary Card -->
+        <div class="pdp-ratings-card">
+            <div class="pdp-rating-header">
+                <div class="pdp-big-rating">@Model.Rating.ToString("0.0") <span class="star-icon">☆</span></div>
+                <div class="pdp-rating-counts">
+                    <span>@Model.RatingCount.ToString("N0") Ratings &amp;</span>
+                    <span>@Model.ReviewCount Reviews</span>
+                </div>
+            </div>
+
+            <div class="pdp-breakdown-bars">
+                <!-- 5 Star -->
+                <div class="pdp-bar-row">
+                    <span class="bar-label">5 ★</span>
+                    <div class="bar-track">
+                        <div class="bar-fill green" style="width: 80%;"></div>
+                    </div>
+                    <span class="bar-count">@Model.RatingBreakdown.FiveStar.ToString("N0")</span>
+                </div>
+
+                <!-- 4 Star -->
+                <div class="pdp-bar-row">
+                    <span class="bar-label">4 ★</span>
+                    <div class="bar-track">
+                        <div class="bar-fill green" style="width: 15%;"></div>
+                    </div>
+                    <span class="bar-count">@Model.RatingBreakdown.FourStar.ToString("N0")</span>
+                </div>
+
+                <!-- 3 Star -->
+                <div class="pdp-bar-row">
+                    <span class="bar-label">3 ★</span>
+                    <div class="bar-track">
+                        <div class="bar-fill yellow" style="width: 5%;"></div>
+                    </div>
+                    <span class="bar-count">@Model.RatingBreakdown.ThreeStar.ToString("N0")</span>
+                </div>
+
+                <!-- 2 Star -->
+                <div class="pdp-bar-row">
+                    <span class="bar-label">2 ★</span>
+                    <div class="bar-track">
+                        <div class="bar-fill orange" style="width: 2%;"></div>
+                    </div>
+                    <span class="bar-count">@Model.RatingBreakdown.TwoStar.ToString("N0")</span>
+                </div>
+
+                <!-- 1 Star -->
+                <div class="pdp-bar-row">
+                    <span class="bar-label">1 ★</span>
+                    <div class="bar-track">
+                        <div class="bar-fill red" style="width: 1%;"></div>
+                    </div>
+                    <span class="bar-count">@Model.RatingBreakdown.OneStar.ToString("N0")</span>
+                </div>
+            </div>
+
+            <a href="#tab-reviews" class="pdp-view-reviews-btn" id="viewAllReviewsBtn">View all reviews</a>
+        </div>
+    </div>
+</div>
+
+<!-- 3D Interactive Modal Overlay -->
+<div class="pdp-modal-backdrop hidden" id="pdp3dModal">
+    <div class="pdp-modal-content">
+        <div class="pdp-modal-header">
+            <h3>3D Interactive View - @Model.Title</h3>
+            <button class="pdp-modal-close" id="close3dModalBtn">&times;</button>
+        </div>
+        <div class="pdp-modal-body">
+            <div class="pdp-3d-placeholder">
+                <img src="@Url.Content(Model.Images.FirstOrDefault() ?? "~/img/giyu_tomioka_main.jpg")" class="pdp-3d-img-spin" id="spinImage3D" alt="3D View" />
+                <div class="pdp-3d-controls">
+                    <button class="btn-spin" id="spinLeftBtn">↺ Rotate Left</button>
+                    <button class="btn-spin" id="spinRightBtn">↻ Rotate Right</button>
+                    <button class="btn-spin" id="reset3dBtn">Reset View</button>
+                </div>
+                <p class="pdp-3d-hint">Drag or use controls to rotate 360° scale figure</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="pdp-toast hidden" id="pdpToast">
+    <div class="pdp-toast-content">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+        <span id="toastMessage">Item added to cart!</span>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/product-details.js" asp-append-version="true"></script>
+}

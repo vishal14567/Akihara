@@ -1,0 +1,20 @@
+[
+  {
+    "Id": "caded312-e27b-4d77-be47-d051430cfdde",
+    "Email": "user@akihara.com",
+    "PasswordHash": "$2a$11$6HZWRFa5/w6pCl3cis0LJe5kWG/dBXTiX3iz5S6Fv6t0GrV0pRBza",
+    "CreatedAt": "2026-09-06T07:17:12.0571447Z"
+  },
+  {
+    "Id": "0c5cbf4b-6cfc-465e-b28d-7cc4a4e9051f",
+    "Email": "Vishal123@gmail.com",
+    "PasswordHash": "$2a$11$K0NgggwEHX7vZ4ZAm/UKMOAwD82E9uGVCogR6AtVQspvayEhTFb9.",
+    "CreatedAt": "2026-09-06T07:18:31.962195Z"
+  },
+  {
+    "Id": "fb353cc2-d2aa-46c8-ac6a-03b5e3da3bfc",
+    "Email": "pativarm@gmail.com",
+    "PasswordHash": "$2a$11$mlFdfNiwUiefV9VFXu8bKu/8/S6Hx9L5shWfcUQl2H0Bke6cURj0S",
+    "CreatedAt": "2026-09-10T05:36:06.4987864Z"
+  }
+]

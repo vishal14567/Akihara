@@ -1,0 +1,67 @@
+@model IEnumerable<Akihara.Models.Product>
+@{
+    ViewData["Title"] = "All Anime Products - Figures, Merch & Manga";
+}
+
+<div class="store-subnav-bar">
+    <div class="store-subnav-container">
+        <a href="#" class="subnav-category-btn">Categories</a>
+        <a href="#" class="subnav-link">New Arrivals</a>
+        <a href="#" class="subnav-link">Pre-orders</a>
+        <a href="#" class="subnav-link active">Figures</a>
+        <a href="#" class="subnav-link">Clothing</a>
+        <a href="#" class="subnav-link">Accessories</a>
+        <a href="#" class="subnav-link">Manga</a>
+        <a href="#" class="subnav-link">Home &amp; Decor</a>
+        <a href="#" class="subnav-link">Deals</a>
+    </div>
+</div>
+
+<div class="pdp-wrapper" style="padding-top: 20px;">
+    <h2 class="store-section-title" style="margin-bottom: 24px;">
+        <span style="color: var(--store-red);">Explore</span> Anime Products &amp; Figures
+    </h2>
+
+    <div class="product-catalog-grid">
+        @foreach (var prod in Model)
+        {
+            <div class="product-card clickable-card" data-href="@Url.Action("Details", "Product", new { id = prod.Id })">
+                @if (!string.IsNullOrEmpty(prod.Badge))
+                {
+                    <div class="product-num-badge">@prod.Badge</div>
+                }
+                <button class="product-wishlist-btn" title="Add to Wishlist">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </button>
+                <div class="product-img-wrapper">
+                    <img src="@Url.Content(prod.Images.FirstOrDefault() ?? "~/img/giyu_tomioka_main.jpg")" class="product-img" alt="@prod.Title">
+                </div>
+                <div class="product-info">
+                    <span class="product-title">@prod.Title</span>
+                    <div class="product-price-row">
+                        <span class="product-price">@prod.Currency@prod.Price.ToString("N0")</span>
+                        @if (prod.DiscountPercentage > 0)
+                        {
+                            <span class="product-discount">@prod.DiscountPercentage% off</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll(".clickable-card").forEach(card => {
+            card.addEventListener("click", function(e) {
+                if (!e.target.closest(".product-wishlist-btn")) {
+                    const href = this.getAttribute("data-href");
+                    if (href) window.location.href = href;
+                }
+            });
+        });
+    });
+</script>

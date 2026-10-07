@@ -1,0 +1,393 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Akihara\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Akihara.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Akihara.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\css\\product.css",
+      "PackagePath": "staticwebassets\\css\\product.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\css\\store.css",
+      "PackagePath": "staticwebassets\\css\\store.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 151209.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 151209.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 151315.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 151315.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 151412.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 151412.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 202547.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 202547.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 202607.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 202607.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 202635.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 202635.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 202707.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 202707.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 202728.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 202728.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 202754.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 202754.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 202827.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 202827.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 202912.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 202912.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 202928.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 202928.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 202941.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 202941.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 202956.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 202956.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 203016.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 203016.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 203736.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 203736.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 203819.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 203819.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 203837.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 203837.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 203851.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 203851.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 203904.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 203904.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 203915.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 203915.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\Screenshot 2026-07-05 203932.png",
+      "PackagePath": "staticwebassets\\img\\Screenshot 2026-07-05 203932.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\giyu_tomioka_main.jpg",
+      "PackagePath": "staticwebassets\\img\\giyu_tomioka_main.jpg"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\giyu_tomioka_thumb2.jpg",
+      "PackagePath": "staticwebassets\\img\\giyu_tomioka_thumb2.jpg"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\giyu_tomioka_thumb3.jpg",
+      "PackagePath": "staticwebassets\\img\\giyu_tomioka_thumb3.jpg"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\giyu_tomioka_thumb4.jpg",
+      "PackagePath": "staticwebassets\\img\\giyu_tomioka_thumb4.jpg"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img\\samurai_removebottom.png",
+      "PackagePath": "staticwebassets\\img\\samurai_removebottom.png"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\img_viewer.html",
+      "PackagePath": "staticwebassets\\img_viewer.html"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\js\\product-details.js",
+      "PackagePath": "staticwebassets\\js\\product-details.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Akihara\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Akihara.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Akihara.props",
+      "PackagePath": "build\\Akihara.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Akihara.props",
+      "PackagePath": "buildMultiTargeting\\Akihara.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Akihara.props",
+      "PackagePath": "buildTransitive\\Akihara.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

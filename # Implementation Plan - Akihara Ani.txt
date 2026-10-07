@@ -1,0 +1,118 @@
+# Implementation Plan - Akihara Anime Store Dashboard
+
+We will transform the current tranquil zen dashboard into a premium, responsive anime store storefront dashboard as shown in the mockup image. We will use the local images under `D:\Akihara\wwwroot\img` for the slider banners, category icons, and product listings, matching them to the mockup's visual structure.
+
+---
+
+## Proposed Changes
+
+### Global Styles & Layout
+
+#### [MODIFY] [_Layout.cshtml](file:///d:/Akihara/Views/Shared/_Layout.cshtml)
+- Replace the dark Zen header and footer with the Akihara Anime Store layout:
+  - **Announcement Bar**: Add top bar with "FREE SHIPPING on orders above $99 | CASH ON DELIVERY AVAILABLE" and "Track Order | Help Center | Contact Us".
+  - **Navigation Header**:
+    - Left: Red Torii gate SVG logo and "AKIHARA ANIME STORE".
+    - Center: Links for `HOME` (active), `SHOP` (with dropdown caret), `MANGA`, `FIGURES`, `APPAREL`, `ACCESSORIES`, `SALE`.
+    - Right: Search input field ("Search anime, manga, figures...") with search icon, and header icons (Profile, Wishlist, Cart with red "2" badge).
+  - **Footer**: Add the features section:
+    - Free Shipping (On orders above $99)
+    - 100% Original (Authentic products only)
+    - Easy Returns (7-day hassle-free returns)
+    - Secure Payments (Safe & trusted checkout)
+    - 24/7 Support (We're here for you)
+  - Adjust layout wrappers to fit the full-width layout.
+
+#### [MODIFY] [site.css](file:///d:/Akihara/wwwroot/css/site.css)
+- Append CSS variables for the Akihara light-cream aesthetic:
+  - Cream Background: `#FAF6F0` (light warm cream background)
+  - Pure White Card Background: `#FFFFFF`
+  - Accent Red: `#B30006` (deep crimson brand red)
+  - Warm Gray Text: `#555555`
+  - Dark Charcoal Headings: `#1E1E1E`
+- Implement custom styling for:
+  - Header Announcement Bar and Navbar elements.
+  - Sidebar category drawer ("ALL CATEGORIES") with hover animations.
+  - Custom hero slider / carousel with dark red controls and slide overlay text.
+  - Category quick links row with subtle hover scaling.
+  - Horizontal scrolling product containers for "TRENDING NOW" and "RECOMMENDED FOR YOU".
+  - "NEW TO YOU?" flex container, "UPCOMING RELEASES" checklist, and "JOIN THE CLUB" call-to-action cards.
+  - Make everything fully responsive with media queries for mobile/tablet screens.
+
+---
+
+### Home View
+
+#### [MODIFY] [Index.cshtml](file:///d:/Akihara/Views/Home/Index.cshtml)
+- Keep `@model IEnumerable<Akihara.Models.TaskItem>` to prevent compilation errors, but replace the HTML structure to match the mockup.
+- **Section 1: Hero Area** (Sidebar + Carousel)
+  - Left: Sidebar categories list:
+    - New Arrivals (NEW badge)
+    - Best Sellers (HOT badge)
+    - Manga
+    - Figures
+    - Apparel
+    - Accessories
+    - Home & Decor
+    - Stationery
+    - Deals (SALE badge)
+    - Gift Cards
+  - Right: Carousel with 4 slides:
+    - Slide 1: Samurai background (`samurai_removebottom.png`) with text overlay:
+      - "THE SPIRIT OF ANIME, LIVES HERE"
+      - "Premium anime merchandise, figures, manga & more — all in one place!"
+      - Button: [SHOP NOW] [EXPLORE MORE]
+    - Slide 2: Ichigo banner (`Screenshot 2026-07-05 151209.png`)
+    - Slide 3: Tanjiro banner (`Screenshot 2026-07-05 151315.png`)
+    - Slide 4: Sasuke banner (`Screenshot 2026-07-05 151412.png`)
+- **Section 2: Category Quick Links**
+  - 7 grid columns mapping the small icons in `wwwroot/img`:
+    - Figures (`Screenshot 2026-07-05 203736.png`)
+    - Manga (`Screenshot 2026-07-05 203819.png`)
+    - Apparel (`Screenshot 2026-07-05 203837.png`)
+    - Accessories (`Screenshot 2026-07-05 203851.png`)
+    - Home & Decor (`Screenshot 2026-07-05 203904.png`)
+    - Stationery (`Screenshot 2026-07-05 203915.png`)
+    - View All (`Screenshot 2026-07-05 203932.png`)
+- **Section 3: Product Grids**
+  - **TRENDING NOW** (5 cards):
+    - Card 1: Gojo Satoru Figure - $49.99 (`Screenshot 2026-07-05 202707.png`)
+    - Card 2: Chainsaw Man Vol. 11 - $12.99 (`Screenshot 2026-07-05 202547.png` / Tanjiro)
+    - Card 3: Demon Slayer Hoodie - $59.99 (`Screenshot 2026-07-05 202912.png`)
+    - Card 4: Jujutsu Kaisen Poster - $8.99 (`Screenshot 2026-07-05 202728.png` / Megumi)
+    - Card 5: Juffy Gear 5 Figure - $39.99 (`Screenshot 2026-07-05 202635.png` / Luffy)
+  - **RECOMMENDED FOR YOU** (5 cards):
+    - Card 1: Naruto Sage Mode - $42.99 (`Screenshot 2026-07-05 202607.png`)
+    - Card 2: Attack on Titan Jacket - $69.99 (`Screenshot 2026-07-05 202827.png` / Zenitsu)
+    - Card 3: One Piece Straw Hat - $19.99 (`Screenshot 2026-07-05 202928.png` / Mug)
+    - Card 4: Itachi Uchiha Figure - $49.99 (`Screenshot 2026-07-05 202941.png` / Backpack)
+    - Card 5: Akatsuki Cloud Lamp - $24.99 (`Screenshot 2026-07-05 202956.png` / Phone case)
+- **Section 4: Bottom Rows**
+  - **NEW TO YOU?** (1 large text card + 4 product cards):
+    - Left text box: "NEW TO YOU? Handpicked picks for new anime fans! [EXPLORE NOW]"
+    - Card 1: My Hero Academia Vol. 32 - $9.99 (`Screenshot 2026-07-05 202754.png` / Goku)
+    - Card 2: Blue Lock Vol. 24 - $9.99 (`Screenshot 2026-07-05 203016.png` / Mouse pad)
+    - Card 3: Spy x Family Vol. 13 - $9.99 (reuse `Screenshot 2026-07-05 202728.png` / Megumi)
+    - Card 4: Tokyo Revengers Vol. 28 - $9.99 (reuse `Screenshot 2026-07-05 202547.png` / Tanjiro)
+  - **UPCOMING RELEASES** (3 lists with countdown blocks):
+    - Release 1: Bleach: TYBW Part 3 - Jul 2024 (show 15 Days, 08 Hrs, 46 Mins)
+    - Release 2: Demon Slayer: Hashira Training Arc Movie - Aug 2024 (show 32 Days, 12 Hrs, 23 Mins)
+    - Release 3: Jujutsu Kaisen Season 3 Coming Soon - TBA 2024 (show 56 Days, 09 Hrs, 51 Mins)
+  - **JOIN THE AKIHARA CLUB!** card:
+    - Text: "JOIN THE AKIHARA CLUB! Get exclusive offers, early access & more! [JOIN NOW]"
+    - Background: Split card with red left background and a half-sliced samurai graphic on the right using a custom CSS crop of `samurai_removebottom.png` or an overlay, to look exactly like the mockup card.
+
+---
+
+## Verification Plan
+
+### Automated Tests
+- Run `dotnet build` to ensure the project compiles without errors.
+- Run `dotnet run` to launch the dev server and verify there are no runtime exceptions.
+
+### Manual Verification
+- Render the page locally and check that:
+  - Header is clean, colored white and red, announcement bar is displayed.
+  - The carousel shifts between the 4 slide states (Samurai, Ichigo, Tanjiro, Sasuke) successfully.
+  - All 12 product image cards display their respective screenshots with prices and add-to-cart buttons.
+  - The layout matches the mockup image in terms of spacing, fonts, margins, and responsiveness.

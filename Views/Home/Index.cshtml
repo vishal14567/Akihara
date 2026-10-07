@@ -1,0 +1,616 @@
+@model IEnumerable<Akihara.Models.TaskItem>
+@{
+    ViewData["Title"] = "Anime Merchandise, Manga & Figures Store";
+}
+
+<div class="store-hero-row">
+    <!-- Categories Sidebar -->
+    <aside class="store-sidebar">
+        <div class="store-sidebar-header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            All Categories
+        </div>
+        <ul class="store-sidebar-list">
+            <li class="store-sidebar-item"><a href="#"><span>New Arrivals</span> <span class="store-tag tag-new">New</span></a></li>
+            <li class="store-sidebar-item"><a href="#"><span>Best Sellers</span> <span class="store-tag tag-hot">Hot</span></a></li>
+            <li class="store-sidebar-item"><a href="#"><span>Manga</span></a></li>
+            <li class="store-sidebar-item"><a href="#"><span>Figures</span></a></li>
+            <li class="store-sidebar-item"><a href="#"><span>Apparel</span></a></li>
+            <li class="store-sidebar-item"><a href="#"><span>Accessories</span></a></li>
+            <li class="store-sidebar-item"><a href="#"><span>Home & Decor</span></a></li>
+            <li class="store-sidebar-item"><a href="#"><span>Stationery</span></a></li>
+            <li class="store-sidebar-item"><a href="#"><span>Deals</span> <span class="store-tag tag-sale">Sale</span></a></li>
+            <li class="store-sidebar-item"><a href="#"><span>Gift Cards</span></a></li>
+        </ul>
+    </aside>
+
+    <!-- Carousel Banner -->
+    <section class="store-hero-carousel" id="storeHeroCarousel">
+        <div class="store-carousel-inner">
+            <!-- Slide 1: Ichigo (STEP INTO ANOTHER WORLD) -->
+            <div class="store-carousel-item active" data-index="0">
+                <img src="~/img/Screenshot 2026-07-05 151209.png" class="store-carousel-img-bg" alt="Ichigo Banner">
+                <div class="store-carousel-overlay">
+                    <h1 class="store-hero-title">Step Into<br><span style="color:#FF3333;">Another World</span></h1>
+                    <p class="store-hero-sub">Epic stories. Iconic characters.<br>Limitless adventures.</p>
+                    <div class="store-hero-buttons">
+                        <a href="#" class="store-btn-red">Shop Now</a>
+                        <a href="#" class="store-btn-outline">View Collection</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Tanjiro (YOUR ANIME. YOUR PASSION.) -->
+            <div class="store-carousel-item" data-index="1">
+                <img src="~/img/Screenshot 2026-07-05 151315.png" class="store-carousel-img-bg" alt="Tanjiro Banner">
+                <div class="store-carousel-overlay">
+                    <h1 class="store-hero-title">Your Anime.<br><span style="color:#FF3333;">Your Passion.</span></h1>
+                    <p class="store-hero-sub">Collect figures, merch,<br>manga & more.</p>
+                    <div class="store-hero-buttons">
+                        <a href="#" class="store-btn-red">Shop Now</a>
+                        <a href="#" class="store-btn-outline">Browse Figures</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Sasuke (LEGENDS LIVE FOREVER) -->
+            <div class="store-carousel-item" data-index="2">
+                <img src="~/img/Screenshot 2026-07-05 151412.png" class="store-carousel-img-bg" alt="Sasuke Banner">
+                <div class="store-carousel-overlay">
+                    <h1 class="store-hero-title">Legends<br>Live <span style="color:#FF3333;">Forever</span></h1>
+                    <p class="store-hero-sub">From classics to new hits,<br>find it all here.</p>
+                    <div class="store-hero-buttons">
+                        <a href="#" class="store-btn-red">Shop Now</a>
+                        <a href="#" class="store-btn-outline">New Arrivals</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Navigation Controls -->
+        <div class="store-carousel-control">
+            <button class="store-carousel-arrow prev" id="carouselPrevBtn" title="Previous Banner">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button class="store-carousel-arrow next" id="carouselNextBtn" title="Next Banner">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Indicators -->
+        <div class="store-carousel-indicators">
+            <button class="store-carousel-dot active" data-slide-to="0"></button>
+            <button class="store-carousel-dot" data-slide-to="1"></button>
+            <button class="store-carousel-dot" data-slide-to="2"></button>
+        </div>
+    </section>
+</div>
+
+<!-- Category Quick Links Row -->
+<div class="category-links-grid">
+    <!-- Category 1 -->
+    <a href="#" class="category-quick-card">
+        <img src="~/img/Screenshot 2026-07-05 203736.png" class="category-quick-icon" alt="Figures Category">
+        <div class="category-quick-text">
+            <span class="category-quick-title">Figures</span>
+            <span class="category-quick-desc">Explore now</span>
+        </div>
+    </a>
+    <!-- Category 2 -->
+    <a href="#" class="category-quick-card">
+        <img src="~/img/Screenshot 2026-07-05 203819.png" class="category-quick-icon" alt="Manga Category">
+        <div class="category-quick-text">
+            <span class="category-quick-title">Manga</span>
+            <span class="category-quick-desc">Read more</span>
+        </div>
+    </a>
+    <!-- Category 3 -->
+    <a href="#" class="category-quick-card">
+        <img src="~/img/Screenshot 2026-07-05 203837.png" class="category-quick-icon" alt="Apparel Category">
+        <div class="category-quick-text">
+            <span class="category-quick-title">Apparel</span>
+            <span class="category-quick-desc">Wear your anime</span>
+        </div>
+    </a>
+    <!-- Category 4 -->
+    <a href="#" class="category-quick-card">
+        <img src="~/img/Screenshot 2026-07-05 203851.png" class="category-quick-icon" alt="Accessories Category">
+        <div class="category-quick-text">
+            <span class="category-quick-title">Accessories</span>
+            <span class="category-quick-desc">Gear up</span>
+        </div>
+    </a>
+    <!-- Category 5 -->
+    <a href="#" class="category-quick-card">
+        <img src="~/img/Screenshot 2026-07-05 203904.png" class="category-quick-icon" alt="Home Decor Category">
+        <div class="category-quick-text">
+            <span class="category-quick-title">Home & Decor</span>
+            <span class="category-quick-desc">Anime your space</span>
+        </div>
+    </a>
+    <!-- Category 6 -->
+    <a href="#" class="category-quick-card">
+        <img src="~/img/Screenshot 2026-07-05 203915.png" class="category-quick-icon" alt="Stationery Category">
+        <div class="category-quick-text">
+            <span class="category-quick-title">Stationery</span>
+            <span class="category-quick-desc">Write in style</span>
+        </div>
+    </a>
+    <!-- Category 7 -->
+    <a href="#" class="category-quick-card">
+        <img src="~/img/Screenshot 2026-07-05 203932.png" class="category-quick-icon" alt="View All Categories">
+        <div class="category-quick-text">
+            <span class="category-quick-title">View All</span>
+            <span class="category-quick-desc">All categories</span>
+        </div>
+    </a>
+</div>
+
+<!-- Product Grids Section (Trending Now & Recommended For You) -->
+<div class="store-section-row">
+    <!-- Trending Now (Left column) -->
+    <div>
+        <div class="store-section-header">
+            <h2 class="store-section-title">
+                <span style="color: var(--store-red);">🔥</span> Trending Now
+            </h2>
+            <a href="#" class="store-view-all">View All →</a>
+        </div>
+        <div class="product-slider-wrapper">
+            <button class="slider-arrow-btn prev" data-target="trendingSlider">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l-6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </button>
+            <div class="product-slider scroll-container" id="trendingSlider">
+                <!-- Card 1: Giyu Tomioka Figure -->
+                <a asp-controller="Product" asp-action="Details" asp-route-id="giyu-tomioka-figure" class="product-card" style="text-decoration:none; color:inherit;">
+                    <div class="product-num-badge">1</div>
+                    <button class="product-wishlist-btn" onclick="event.preventDefault();">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                    <div class="product-img-wrapper">
+                        <img src="~/img/giyu_tomioka_main.jpg" class="product-img" alt="Demon Slayer Giyu Tomioka 1/8 Scale Figure">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-title">Giyu Tomioka 1/8 Figure</span>
+                        <span class="product-price">₹6,999</span>
+                    </div>
+                </a>
+
+                <!-- Card 2: Gojo Satoru -->
+                <a asp-controller="Product" asp-action="Details" asp-route-id="gojo-satoru-figure" class="product-card" style="text-decoration:none; color:inherit;">
+                    <div class="product-num-badge">2</div>
+                    <button class="product-wishlist-btn" onclick="event.preventDefault();">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                    <div class="product-img-wrapper">
+                        <img src="~/img/Screenshot 2026-07-05 202707.png" class="product-img" alt="Gojo Satoru Figure">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-title">Gojo Satoru Figure</span>
+                        <span class="product-price">₹5,999</span>
+                    </div>
+                </a>
+
+                <!-- Card 3: Tanjiro Kamado -->
+                <a asp-controller="Product" asp-action="Details" asp-route-id="tanjiro-kamado-figure" class="product-card" style="text-decoration:none; color:inherit;">
+                    <div class="product-num-badge">3</div>
+                    <button class="product-wishlist-btn" onclick="event.preventDefault();">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                    <div class="product-img-wrapper">
+                        <img src="~/img/Screenshot 2026-07-05 202547.png" class="product-img" alt="Tanjiro Kamado Figure">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-title">Tanjiro Kamado Figure</span>
+                        <span class="product-price">₹4,499</span>
+                    </div>
+                </a>
+
+                <!-- Card 4: Sukuna Figure -->
+                <a asp-controller="Product" asp-action="Details" asp-route-id="sukuna-figure" class="product-card" style="text-decoration:none; color:inherit;">
+                    <div class="product-num-badge">4</div>
+                    <button class="product-wishlist-btn" onclick="event.preventDefault();">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                    <div class="product-img-wrapper">
+                        <img src="~/img/Screenshot 2026-07-05 202728.png" class="product-img" alt="Sukuna Figure">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-title">Sukuna Figure</span>
+                        <span class="product-price">₹5,499</span>
+                    </div>
+                </a>
+
+                <!-- Card 5: Luffy Gear 5 Figure -->
+                <a asp-controller="Product" asp-action="Details" asp-route-id="luffy-gear-5-figure" class="product-card" style="text-decoration:none; color:inherit;">
+                    <div class="product-num-badge">5</div>
+                    <button class="product-wishlist-btn" onclick="event.preventDefault();">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                    <div class="product-img-wrapper">
+                        <img src="~/img/Screenshot 2026-07-05 202635.png" class="product-img" alt="Luffy Gear 5 Figure">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-title">Luffy Gear 5 Figure</span>
+                        <span class="product-price">₹3,999</span>
+                    </div>
+                </a>
+            </div>
+            <button class="slider-arrow-btn next" data-target="trendingSlider">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Recommended For You (Right column) -->
+    <div>
+        <div class="store-section-header">
+            <h2 class="store-section-title">
+                <span class="title-red">Recommended</span> For You
+            </h2>
+            <a href="#" class="store-view-all">View All →</a>
+        </div>
+        <div class="product-slider-wrapper">
+            <button class="slider-arrow-btn prev" data-target="recommendedSlider">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l-6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+            </button>
+            <div class="product-slider scroll-container" id="recommendedSlider">
+                <!-- Card 1: Naruto Sage Mode -->
+                <div class="product-card">
+                    <button class="product-wishlist-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                    <div class="product-img-wrapper">
+                        <img src="~/img/Screenshot 2026-07-05 202607.png" class="product-img" alt="Naruto Sage Mode">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-title">Naruto Sage Mode</span>
+                        <span class="product-price">$42.99</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Attack on Titan Jacket -->
+                <div class="product-card">
+                    <button class="product-wishlist-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                    <div class="product-img-wrapper">
+                        <img src="~/img/Screenshot 2026-07-05 202827.png" class="product-img" alt="Attack on Titan Jacket">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-title">Attack on Titan Jacket</span>
+                        <span class="product-price">$69.99</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: One Piece Straw Hat -->
+                <div class="product-card">
+                    <button class="product-wishlist-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                    <div class="product-img-wrapper">
+                        <img src="~/img/Screenshot 2026-07-05 202928.png" class="product-img" alt="One Piece Straw Hat">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-title">One Piece Straw Hat</span>
+                        <span class="product-price">$19.99</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Itachi Uchiha Figure -->
+                <div class="product-card">
+                    <button class="product-wishlist-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                    <div class="product-img-wrapper">
+                        <img src="~/img/Screenshot 2026-07-05 202941.png" class="product-img" alt="Itachi Uchiha Figure">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-title">Itachi Uchiha Figure</span>
+                        <span class="product-price">$49.99</span>
+                    </div>
+                </div>
+
+                <!-- Card 5: Akatsuki Cloud Lamp -->
+                <div class="product-card">
+                    <button class="product-wishlist-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                    <div class="product-img-wrapper">
+                        <img src="~/img/Screenshot 2026-07-05 202956.png" class="product-img" alt="Akatsuki Cloud Lamp">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-title">Akatsuki Cloud Lamp</span>
+                        <span class="product-price">$24.99</span>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-arrow-btn next" data-target="recommendedSlider">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Bottom Section: New to You? & Upcoming Releases & Join the Club -->
+<div class="bottom-sections-grid">
+    <!-- NEW TO YOU? -->
+    <div class="new-to-you-card">
+        <div class="new-to-you-layout">
+            <div class="new-to-you-intro">
+                <h3 class="new-to-you-title">New to<br><span style="color: var(--store-red);">You?</span></h3>
+                <p class="new-to-you-desc">Handpicked picks for new anime fans!</p>
+                <a href="#" class="new-to-you-btn">Explore Now</a>
+            </div>
+            <div class="new-to-you-slider-wrapper">
+                <div class="new-to-you-list scroll-container">
+                    <!-- Card 1: My Hero Academia -->
+                    <div class="product-card">
+                        <div class="product-img-wrapper" style="height: 120px;">
+                            <img src="~/img/Screenshot 2026-07-05 202754.png" class="product-img" alt="My Hero Academia Vol. 32">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-title" style="height: auto; font-size: 0.76rem;">My Hero Academia Vol. 32</span>
+                            <span class="product-price" style="font-size: 0.85rem;">$9.99</span>
+                        </div>
+                    </div>
+                    <!-- Card 2: Blue Lock -->
+                    <div class="product-card">
+                        <div class="product-img-wrapper" style="height: 120px;">
+                            <img src="~/img/Screenshot 2026-07-05 203016.png" class="product-img" alt="Blue Lock Vol. 24">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-title" style="height: auto; font-size: 0.76rem;">Blue Lock Vol. 24</span>
+                            <span class="product-price" style="font-size: 0.85rem;">$9.99</span>
+                        </div>
+                    </div>
+                    <!-- Card 3: Spy x Family -->
+                    <div class="product-card">
+                        <div class="product-img-wrapper" style="height: 120px;">
+                            <img src="~/img/Screenshot 2026-07-05 202728.png" class="product-img" alt="Spy x Family Vol. 13">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-title" style="height: auto; font-size: 0.76rem;">Spy x Family Vol. 13</span>
+                            <span class="product-price" style="font-size: 0.85rem;">$9.99</span>
+                        </div>
+                    </div>
+                    <!-- Card 4: Tokyo Revengers -->
+                    <div class="product-card">
+                        <div class="product-img-wrapper" style="height: 120px;">
+                            <img src="~/img/Screenshot 2026-07-05 202547.png" class="product-img" alt="Tokyo Revengers Vol. 28">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-title" style="height: auto; font-size: 0.76rem;">Tokyo Revengers Vol. 28</span>
+                            <span class="product-price" style="font-size: 0.85rem;">$9.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UPCOMING RELEASES -->
+    <div class="upcoming-releases-card">
+        <div class="store-section-header" style="margin-bottom: 15px; padding-bottom: 6px;">
+            <h3 class="store-section-title" style="font-size: 1rem;">
+                <span class="title-red">📢 Upcoming</span> Releases
+            </h3>
+            <a href="#" class="store-view-all" style="font-size: 0.7rem;">View All →</a>
+        </div>
+        <div class="upcoming-list">
+            <!-- Release 1 -->
+            <div class="upcoming-item">
+                <div class="upcoming-img-wrapper">
+                    <img src="~/img/Screenshot 2026-07-05 202707.png" class="upcoming-img" alt="Bleach Release">
+                </div>
+                <div class="upcoming-details">
+                    <span class="upcoming-title">Bleach: Thousand-Year Blood War Part 3</span>
+                    <span class="upcoming-date">Jul 2024</span>
+                </div>
+                <div class="upcoming-countdown">
+                    <div class="countdown-block">
+                        <span class="countdown-val">15</span>
+                        <span class="countdown-unit">Days</span>
+                    </div>
+                    <div class="countdown-block">
+                        <span class="countdown-val">08</span>
+                        <span class="countdown-unit">Hrs</span>
+                    </div>
+                    <div class="countdown-block">
+                        <span class="countdown-val">46</span>
+                        <span class="countdown-unit">Mins</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Release 2 -->
+            <div class="upcoming-item">
+                <div class="upcoming-img-wrapper">
+                    <img src="~/img/Screenshot 2026-07-05 202547.png" class="upcoming-img" alt="Demon Slayer Release">
+                </div>
+                <div class="upcoming-details">
+                    <span class="upcoming-title">Demon Slayer: Hashira Training Arc Movie</span>
+                    <span class="upcoming-date">Aug 2024</span>
+                </div>
+                <div class="upcoming-countdown">
+                    <div class="countdown-block">
+                        <span class="countdown-val">32</span>
+                        <span class="countdown-unit">Days</span>
+                    </div>
+                    <div class="countdown-block">
+                        <span class="countdown-val">12</span>
+                        <span class="countdown-unit">Hrs</span>
+                    </div>
+                    <div class="countdown-block">
+                        <span class="countdown-val">23</span>
+                        <span class="countdown-unit">Mins</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Release 3 -->
+            <div class="upcoming-item">
+                <div class="upcoming-img-wrapper">
+                    <img src="~/img/Screenshot 2026-07-05 202728.png" class="upcoming-img" alt="Jujutsu Kaisen Release">
+                </div>
+                <div class="upcoming-details">
+                    <span class="upcoming-title">Jujutsu Kaisen Season 3 Coming Soon</span>
+                    <span class="upcoming-date">TBA 2024</span>
+                </div>
+                <div class="upcoming-countdown">
+                    <div class="countdown-block">
+                        <span class="countdown-val">56</span>
+                        <span class="countdown-unit">Days</span>
+                    </div>
+                    <div class="countdown-block">
+                        <span class="countdown-val">09</span>
+                        <span class="countdown-unit">Hrs</span>
+                    </div>
+                    <div class="countdown-block">
+                        <span class="countdown-val">51</span>
+                        <span class="countdown-unit">Mins</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JOIN THE CLUB CARD -->
+    <div class="club-card">
+        <div class="club-content">
+            <h3 class="club-title">Join the<br>Akihara Club!</h3>
+            <p class="club-desc">Get exclusive offers, early access & more!</p>
+            <a href="#" class="club-btn">Join Now</a>
+        </div>
+        <div class="club-graphic-wrapper">
+            <img src="~/img/samurai_removebottom.png" class="club-graphic" alt="Club Samurai Overlay">
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // --- Custom Hero Carousel Logic ---
+            const carousel = document.getElementById("storeHeroCarousel");
+            if (carousel) {
+                const items = carousel.querySelectorAll(".store-carousel-item");
+                const dots = carousel.querySelectorAll(".store-carousel-indicators .store-carousel-dot");
+                const prevBtn = document.getElementById("carouselPrevBtn");
+                const nextBtn = document.getElementById("carouselNextBtn");
+                let activeIndex = 0;
+                let autoSlideTimer = null;
+
+                function showSlide(index) {
+                    items[activeIndex].classList.remove("active");
+                    dots[activeIndex].classList.remove("active");
+
+                    activeIndex = (index + items.length) % items.length;
+
+                    items[activeIndex].classList.add("active");
+                    dots[activeIndex].classList.add("active");
+                }
+
+                function nextSlide() {
+                    showSlide(activeIndex + 1);
+                }
+
+                function prevSlide() {
+                    showSlide(activeIndex - 1);
+                }
+
+                // Autoplay
+                function startAutoSlide() {
+                    stopAutoSlide();
+                    autoSlideTimer = setInterval(nextSlide, 5000);
+                }
+
+                function stopAutoSlide() {
+                    if (autoSlideTimer) {
+                        clearInterval(autoSlideTimer);
+                    }
+                }
+
+                if (prevBtn) {
+                    prevBtn.addEventListener("click", () => {
+                        prevSlide();
+                        startAutoSlide(); // reset timer
+                    });
+                }
+
+                if (nextBtn) {
+                    nextBtn.addEventListener("click", () => {
+                        nextSlide();
+                        startAutoSlide(); // reset timer
+                    });
+                }
+
+                dots.forEach((dot, index) => {
+                    dot.addEventListener("click", () => {
+                        showSlide(index);
+                        startAutoSlide(); // reset timer
+                    });
+                });
+
+                // Start
+                startAutoSlide();
+
+                // Stop autoplay on hover
+                carousel.addEventListener("mouseenter", stopAutoSlide);
+                carousel.addEventListener("mouseleave", startAutoSlide);
+            }
+
+            // --- Product Slider Horizontal Scroll Buttons ---
+            const sliderButtons = document.querySelectorAll(".slider-arrow-btn");
+            sliderButtons.forEach(btn => {
+                btn.addEventListener("click", function() {
+                    const targetId = this.getAttribute("data-target");
+                    const slider = document.getElementById(targetId);
+                    if (slider) {
+                        const isPrev = this.classList.contains("prev");
+                        const cardWidth = 185; // card width (170px) + gap (15px)
+                        const scrollAmount = cardWidth * 2;
+                        
+                        if (isPrev) {
+                            slider.scrollLeft -= scrollAmount;
+                        } else {
+                            slider.scrollLeft += scrollAmount;
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

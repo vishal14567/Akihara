@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Akihara Anime Store (秋原)</title>
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Dela+Gothic+One&family=Kaisei+Decol:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap and Site CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/store.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/product.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Akihara.styles.css" asp-append-version="true" />
+</head>
+<body class="theme-autumn store-theme">
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-container">
+            <div>
+                <span>🔥 FREE SHIPPING on orders above $99 &nbsp;|&nbsp; 💵 CASH ON DELIVERY AVAILABLE</span>
+            </div>
+            <div class="announcement-links">
+                <a href="#">Track Order</a>
+                <a href="#">Help Center</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="store-header">
+        <nav class="store-nav-container">
+            <!-- Brand Logo -->
+            <a class="store-brand" asp-controller="Home" asp-action="Index">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="store-logo-icon" style="fill:none; stroke:currentColor; stroke-width:6; stroke-linecap:round; stroke-linejoin:round;">
+                    <!-- Top curved beam -->
+                    <path d="M12 25 C 35 18, 65 18, 88 25" stroke="currentColor" stroke-width="8"/>
+                    <path d="M16 35 L 84 35" stroke="currentColor" stroke-width="6"/>
+                    <!-- Tie beam -->
+                    <path d="M22 52 L 78 52" stroke="currentColor" stroke-width="5"/>
+                    <!-- Pillars -->
+                    <path d="M34 35 L 30 85" stroke="currentColor" stroke-width="7"/>
+                    <path d="M66 35 L 70 85" stroke="currentColor" stroke-width="7"/>
+                    <!-- Central strut -->
+                    <path d="M50 35 L 50 52" stroke="currentColor" stroke-width="5"/>
+                </svg>
+                <div class="store-brand-text">
+                    <span class="store-brand-title">AKIHARA</span>
+                    <span class="store-brand-subtitle">Anime Store</span>
+                </div>
+            </a>
+            
+            <!-- Nav Links -->
+            <div class="store-nav-links">
+                <a class="store-nav-link-item active" asp-controller="Home" asp-action="Index">Home</a>
+                <a class="store-nav-link-item" asp-controller="Product" asp-action="Index">
+                    Shop
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16" style="margin-left: 2px;">
+                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </a>
+                <a class="store-nav-link-item" asp-controller="Product" asp-action="Index">Manga</a>
+                <a class="store-nav-link-item" asp-controller="Product" asp-action="Details" asp-route-id="giyu-tomioka-figure">Figures</a>
+                <a class="store-nav-link-item" asp-controller="Product" asp-action="Index">Apparel</a>
+                <a class="store-nav-link-item" asp-controller="Product" asp-action="Index">Accessories</a>
+                <a class="store-nav-link-item" asp-controller="Product" asp-action="Index" style="color:var(--store-red);">Sale</a>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="store-search-bar">
+                <input type="text" class="store-search-input" placeholder="Search anime, manga, figures..." />
+                <button class="store-search-btn" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Header Action Icons -->
+            <div class="store-header-actions">
+                <!-- Profile -->
+                <button class="store-action-btn" title="My Account">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </button>
+                <!-- Wishlist -->
+                <button class="store-action-btn" title="Wishlist">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </button>
+                <!-- Cart -->
+                <button class="store-action-btn" title="Shopping Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span class="store-badge">2</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main role="main" class="store-container">
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer class="store-footer">
+        <!-- Features Bar -->
+        <div class="footer-features-bar">
+            <div class="features-container">
+                <!-- Feature 1 -->
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                        </svg>
+                    </div>
+                    <div class="feature-info">
+                        <span class="feature-title">Free Shipping</span>
+                        <span class="feature-desc">On orders above $99</span>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                        </svg>
+                    </div>
+                    <div class="feature-info">
+                        <span class="feature-title">100% Original</span>
+                        <span class="feature-desc">Authentic products only</span>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.5" />
+                        </svg>
+                    </div>
+                    <div class="feature-info">
+                        <span class="feature-title">Easy Returns</span>
+                        <span class="feature-desc">7-day hassle-free returns</span>
+                    </div>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <div class="feature-info">
+                        <span class="feature-title">Secure Payments</span>
+                        <span class="feature-desc">Safe & trusted checkout</span>
+                    </div>
+                </div>
+                <!-- Feature 5 -->
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <div class="feature-info">
+                        <span class="feature-title">24/7 Support</span>
+                        <span class="feature-desc">We're here for you</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; 2026 - Akihara Anime Store (秋原). All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

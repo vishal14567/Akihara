@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "eChltXlIvY8=",
+  "success": true,
+  "projectFilePath": "D:\\Akihara\\Akihara.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vishal\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}
